@@ -1306,18 +1306,6 @@ section {
     }
   }
 
-@keyframes glow{
-    0%{
-        background: var(--text-color);
-        box-shadow: none;
-    }
-
-    100%{
-        background: var(--primary-color);
-        box-shadow: 0 0 5px var(--secondary-color);
-    }
-}
-
 
 @keyframes fadeup{
     0%{
@@ -1432,11 +1420,21 @@ section {
         text-align: center;
         background-color: var(--bg-color);
         /* backdrop-filter: blur(4px) brightness(95%); */
-        top: -10%;
+        padding-top: 0%;
         z-index: -1;
         width: 100%;
         transition: top 0.3s ease, opacity 300ms ease;
         opacity: 0;
+    }
+
+    .mode-toggle{
+      display: none;
+    }
+
+    .mode-toggle.small{
+      display: block;
+      position: absolute;
+      left: 80%;
     }
 
     
@@ -1506,6 +1504,12 @@ section {
 @media only screen and (max-width:600px) {
     .menu {
         display: block;
+    }
+
+        .mode-toggle.small{
+      display: block;
+      position: absolute;
+      left: calc(100% - 140px);
     }
 
     section {
