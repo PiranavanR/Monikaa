@@ -26,19 +26,10 @@ window.onload = function() {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburg');
-    const navBar = document.getElementById('nav-bar');
-
-    hamburger.addEventListener('change', () => {
-        navBar.style.opacity = hamburger.checked ? '1' : '0';
-    });
-});
-
 const circles = document.querySelectorAll('.circle');
 
 circles.forEach(circle => {
-    const dots = parseInt(circle.getAttribute("data-dots"));
+  const dots = parseInt(circle.getAttribute("data-dots"));
     const marked = parseInt(circle.getAttribute("data-percent"));
     const percent = Math.floor((dots * marked) / 100);
     let points = '';
@@ -47,7 +38,7 @@ circles.forEach(circle => {
     
     for (let i = 0; i < dots; i++) {
         points += `<div class="points" style="--i:${i}; --rot:${rotate}deg"></div>`;
-    }
+      }
 
     circle.innerHTML = points;
     const pointsMarked = circle.querySelectorAll('.points');
@@ -65,11 +56,11 @@ const navLinks = document.querySelectorAll('nav a');
 
 function handleNavigation(event) {
   event.preventDefault();
-
+  
   navLinks.forEach(link => link.classList.remove('active'));
-
+  
   this.classList.add('active');
-
+  
   const targetId = this.getAttribute('href');
   const targetSection = document.querySelector(targetId);
   if (targetSection) {
@@ -77,19 +68,30 @@ function handleNavigation(event) {
   }
 }
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburg');
+    const navBar = document.getElementById('nav-bar');
+
+    hamburger.addEventListener('change', () => {
+        navBar.style.opacity = hamburger.checked ? '1' : '0';
+        navBar.style.pointerEvents = hamburger.checked ? 'auto' : 'none';
+    });
+});
+
 navLinks.forEach(link => link.addEventListener('click', handleNavigation));
 
 
 document.getElementById("dismiss-btn").addEventListener('click', function(){
-    console.log('Sample Button Clicked')
+  console.log('Sample Button Clicked')
     document.getElementById('successMessage').classList.remove('active');
   });
   
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
-  
+    
     var formData = new FormData(this);
-  
+    
     fetch(this.action, {
       method: this.method,
       body: formData,
