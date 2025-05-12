@@ -46,7 +46,7 @@ header {
     left: 0;
     right: 0;
     background: var(--bg-color);
-    z-index: 1000; /* Ensure it stays above other content */
+    z-index: 1000;
   }
 
 .logo {
