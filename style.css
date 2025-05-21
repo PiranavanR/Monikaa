@@ -256,6 +256,20 @@ section {
     margin-bottom: 2rem;
 }
 
+.title.shine {
+  background: linear-gradient(
+    90deg,
+    var(--text-color) 0%,
+    var(--primary-color) 50%,
+    var(--text-color) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 3s linear infinite;
+}
+
 .skills{
   margin-top: 100px;
 }
@@ -1239,10 +1253,14 @@ section {
   }
   }
   
-@keyframes shine {
-  0% { background-position: -200px; }
-  100% { background-position: 200px; }
-}
+  @keyframes shine {
+    from {
+      background-position: 200% center;
+    }
+    to {
+      background-position: -200% center;
+    }
+  }
 
 @-webkit-keyframes shine {
   0% { background-position: -200px; }
