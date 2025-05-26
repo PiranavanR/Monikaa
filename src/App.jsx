@@ -5,7 +5,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import useThemeToggle from './assets/ThemeProvider';
-import './app.css';
+import './App.css';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
