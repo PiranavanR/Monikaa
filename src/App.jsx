@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
         <div className="bg-red-500 text-white z-100 p-4 text-center">
           Tailwind CSS is working!
         </div>
+        <Analytics />
         <Hero />
         <Skills />
         <Projects />
